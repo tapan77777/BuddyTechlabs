@@ -27,11 +27,7 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-6 sm:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 group">
-          <div className="w-8 h-8 rounded-lg bg-primary-600 flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
-            <span className="text-white font-bold text-sm" style={{ fontFamily: "var(--font-sora)" }}>
-              B
-            </span>
-          </div>
+          <img src="/icon-96.svg" width={36} height={36} alt="BuddyTech Labs" className="flex-shrink-0 transition-transform duration-300 group-hover:scale-105" />
           <span
             className="text-[#171717] font-semibold text-[15px] tracking-tight"
             style={{ fontFamily: "var(--font-sora)" }}

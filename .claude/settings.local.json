@@ -3,7 +3,9 @@
     "allow": [
       "Bash(npx create-next-app@latest:*)",
       "Bash(npx tsc:*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(curl *)",
+      "Bash(npx next *)"
     ]
   }
 }

@@ -89,3 +89,32 @@ body {
   transform: translateY(-4px);
   box-shadow: 0 20px 48px rgba(61, 78, 255, 0.10), 0 8px 24px rgba(0, 0, 0, 0.06);
 }
+
+@keyframes tapan-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.tapan-marquee {
+  animation: tapan-marquee 30s linear infinite;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .tapan-hero-solid {
+    font-size: clamp(2.8rem, 10vw, 4rem) !important;
+    max-width: 100% !important;
+  }
+  .tapan-hero-outline {
+    font-size: clamp(2.5rem, 9vw, 3.5rem) !important;
+  }
+  .tapan-hero-photo {
+    width: 45vw !important;
+    max-width: 180px !important;
+    right: 0 !important;
+    top: auto !important;
+    bottom: 120px !important;
+    transform: none !important;
+  }
+}

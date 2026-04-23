@@ -12,14 +12,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
         {/* Logo + copyright */}
         <div className="flex items-center gap-3">
-          <div className="w-7 h-7 rounded-md bg-primary-600 flex items-center justify-center flex-shrink-0">
-            <span
-              className="text-white font-bold text-[12px]"
-              style={{ fontFamily: "var(--font-sora)" }}
-            >
-              B
-            </span>
-          </div>
+          <img src="/icon-96.svg" width={28} height={28} alt="BuddyTech Labs" className="flex-shrink-0" />
           <span className="text-[13px] text-neutral-400">
             &copy; {currentYear}{" "}
             <span className="text-neutral-600 font-medium">BuddyTech Labs</span>.
