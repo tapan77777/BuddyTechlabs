@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
+import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   { label: "Products", href: "#products" },
@@ -27,9 +29,9 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-6 sm:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 group">
-          <img src="/icon-96.svg" width={36} height={36} alt="BuddyTech Labs" className="flex-shrink-0 transition-transform duration-300 group-hover:scale-105" />
+          <Image src="/icon-96.svg" alt="BuddyTech Labs logo" width={36} height={36} className="rounded-lg flex-shrink-0 transition-transform duration-300 group-hover:scale-105" />
           <span
-            className="text-[#171717] font-semibold text-[15px] tracking-tight"
+            className="text-[#171717] dark:text-white font-semibold text-[15px] tracking-tight"
             style={{ fontFamily: "var(--font-sora)" }}
           >
             BuddyTech Labs
@@ -42,50 +44,57 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="text-[14px] font-medium text-neutral-500 hover:text-[#171717] transition-colors duration-200"
+              className="text-[14px] font-medium text-neutral-500 hover:text-[#171717] dark:text-neutral-400 dark:hover:text-white transition-colors duration-200"
             >
               {link.label}
             </a>
           ))}
         </nav>
 
-        {/* CTA */}
-        <a
-          href="#products"
-          className="hidden md:inline-flex items-center gap-1.5 bg-[#171717] text-white text-[13px] font-medium px-4 py-2 rounded-full hover:bg-neutral-800 transition-colors duration-200"
-        >
-          View Products
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="opacity-70"
+        {/* Right side: toggle + CTA */}
+        <div className="hidden md:flex items-center gap-3">
+          <ThemeToggle />
+          <a
+            href="#products"
+            className="inline-flex items-center gap-1.5 bg-[#171717] dark:bg-white text-white dark:text-[#0a0a0f] text-[13px] font-medium px-4 py-2 rounded-full hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors duration-200"
           >
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </a>
+            View Products
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="opacity-70"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
 
-        {/* Mobile menu button */}
-        <button className="md:hidden p-2 rounded-lg hover:bg-neutral-100 transition-colors" aria-label="Menu">
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <line x1="3" y1="8" x2="21" y2="8" />
-            <line x1="3" y1="16" x2="21" y2="16" />
-          </svg>
-        </button>
+        {/* Mobile: toggle + menu */}
+        <div className="md:hidden flex items-center gap-2">
+          <ThemeToggle />
+          <button className="p-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-white/[0.08] transition-colors" aria-label="Menu">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="text-[#171717] dark:text-white"
+            >
+              <line x1="3" y1="8" x2="21" y2="8" />
+              <line x1="3" y1="16" x2="21" y2="16" />
+            </svg>
+          </button>
+        </div>
       </div>
     </header>
   );

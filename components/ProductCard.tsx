@@ -14,17 +14,17 @@ interface ProductCardProps {
 const statusConfig: Record<Status, { label: string; classes: string; dot: string }> = {
   Live: {
     label: "Live",
-    classes: "bg-emerald-50 text-emerald-700 border-emerald-200",
+    classes: "bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-500/10 dark:text-emerald-400 dark:border-emerald-500/20",
     dot: "bg-emerald-500",
   },
   "Coming Soon": {
     label: "Coming Soon",
-    classes: "bg-amber-50 text-amber-700 border-amber-200",
+    classes: "bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-500/10 dark:text-amber-400 dark:border-amber-500/20",
     dot: "bg-amber-500",
   },
   "In Development": {
     label: "In Development",
-    classes: "bg-blue-50 text-blue-700 border-blue-200",
+    classes: "bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-500/10 dark:text-blue-400 dark:border-blue-500/20",
     dot: "bg-blue-500",
   },
 };
@@ -41,7 +41,7 @@ export default function ProductCard({
   const isLive = status === "Live" && href;
 
   const cardContent = (
-    <div className="card-hover group relative bg-white rounded-2xl border border-neutral-200 p-7 flex flex-col gap-6 h-full cursor-default">
+    <div className="card-hover group relative bg-white dark:bg-[#111118] rounded-2xl border border-neutral-200 dark:border-white/[0.08] p-7 flex flex-col gap-6 h-full cursor-default">
       {/* Subtle top accent line */}
       <div
         className="absolute top-0 left-8 right-8 h-px rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -60,7 +60,7 @@ export default function ProductCard({
       <div className="flex flex-col gap-3 flex-1">
         <div className="flex items-start justify-between gap-3">
           <h3
-            className="text-[18px] font-semibold text-[#171717] leading-snug"
+            className="text-[18px] font-semibold text-[#171717] dark:text-white leading-snug"
             style={{ fontFamily: "var(--font-sora)" }}
           >
             {name}
@@ -72,13 +72,13 @@ export default function ProductCard({
             {badge.label}
           </span>
         </div>
-        <p className="text-[14px] text-neutral-500 leading-relaxed">{description}</p>
+        <p className="text-[14px] text-neutral-500 dark:text-neutral-400 leading-relaxed">{description}</p>
       </div>
 
       {/* Footer */}
-      <div className="flex items-center justify-between pt-2 border-t border-neutral-100">
+      <div className="flex items-center justify-between pt-2 border-t border-neutral-100 dark:border-white/[0.06]">
         {isLive ? (
-          <span className="text-[13px] font-medium text-primary-600 flex items-center gap-1.5 group-hover:gap-2.5 transition-all duration-200">
+          <span className="text-[13px] font-medium text-primary-600 dark:text-primary-400 flex items-center gap-1.5 group-hover:gap-2.5 transition-all duration-200">
             Visit product
             <svg
               width="14"
@@ -94,7 +94,7 @@ export default function ProductCard({
             </svg>
           </span>
         ) : (
-          <span className="text-[13px] text-neutral-400 font-medium">
+          <span className="text-[13px] text-neutral-400 dark:text-neutral-500 font-medium">
             {status === "Coming Soon" ? "Notify me" : "In progress"}
           </span>
         )}

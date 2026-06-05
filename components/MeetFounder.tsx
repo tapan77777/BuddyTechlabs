@@ -5,18 +5,17 @@ const TAPAN_PHOTO = "/ChatGPT Image Apr 22, 2026, 04_38_13 PM.png";
 
 export default function MeetFounder() {
   return (
-    <section className="py-20 px-6 sm:px-8 bg-white">
+    <section className="py-20 px-6 sm:px-8 bg-white dark:bg-[#0a0a0f] border-t border-neutral-100 dark:border-white/[0.05]">
       <div className="max-w-6xl mx-auto">
-        <span className="inline-block text-[12px] font-semibold text-neutral-400 tracking-widest uppercase mb-5">
+        <span className="inline-block text-[12px] font-semibold text-neutral-400 dark:text-neutral-500 tracking-widest uppercase mb-5">
           The person behind it
         </span>
         <h2
-          className="text-[32px] sm:text-[40px] lg:text-[48px] font-bold text-[#171717] leading-tight tracking-tight mb-12"
+          className="text-[32px] sm:text-[40px] lg:text-[48px] font-bold text-[#171717] dark:text-white leading-tight tracking-tight mb-12"
           style={{ fontFamily: "var(--font-sora)" }}
         >
-          
           <br />
-         who cares deeply about what gets built.
+          who cares deeply about what gets built.
         </h2>
 
         <div className="flex flex-col sm:flex-row items-center sm:items-center gap-5">
@@ -34,8 +33,8 @@ export default function MeetFounder() {
             }}
           />
           <div className="text-center sm:text-left">
-            <p className="text-[16px] font-bold text-[#171717]">Tapan</p>
-            <p className="text-[14px] text-neutral-400">Founder, BuddyTech Labs</p>
+            <p className="text-[16px] font-bold text-[#171717] dark:text-white">Tapan</p>
+            <p className="text-[14px] text-neutral-400 dark:text-neutral-500">Founder, BuddyTech Labs</p>
           </div>
           <div className="sm:ml-auto">
             <Link

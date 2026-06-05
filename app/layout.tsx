@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Sora, DM_Sans, Syne } from "next/font/google";
+import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
 const sora = Sora({
@@ -61,9 +62,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${sora.variable} ${dmSans.variable} ${syne.variable}`}>
-      <body className="min-h-screen bg-[#fafafa] text-[#171717]">
-        {children}
+    <html lang="en" suppressHydrationWarning className={`${sora.variable} ${dmSans.variable} ${syne.variable}`}>
+      <body className="min-h-screen bg-[#fafafa] text-[#171717] dark:bg-[#0a0a0f] dark:text-white">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange={false}>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

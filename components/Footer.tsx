@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const currentYear = new Date().getFullYear();
 
 const footerLinks = [
@@ -8,14 +10,14 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-neutral-100 py-10 px-6 sm:px-8">
+    <footer className="bg-white dark:bg-[#0a0a0f] border-t border-neutral-100 dark:border-white/[0.06] py-10 px-6 sm:px-8">
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
         {/* Logo + copyright */}
         <div className="flex items-center gap-3">
-          <img src="/icon-96.svg" width={28} height={28} alt="BuddyTech Labs" className="flex-shrink-0" />
-          <span className="text-[13px] text-neutral-400">
+          <Image src="/icon-96.svg" alt="BuddyTech Labs" width={28} height={28} className="rounded-lg flex-shrink-0" />
+          <span className="text-[13px] text-neutral-400 dark:text-neutral-500">
             &copy; {currentYear}{" "}
-            <span className="text-neutral-600 font-medium">BuddyTech Labs</span>.
+            <span className="text-neutral-600 dark:text-neutral-300 font-medium">BuddyTech Labs</span>.
             All rights reserved.
           </span>
         </div>
@@ -26,7 +28,7 @@ export default function Footer() {
             <a
               key={link.href}
               href={link.href}
-              className="text-[13px] text-neutral-400 hover:text-neutral-700 transition-colors duration-200"
+              className="text-[13px] text-neutral-400 hover:text-neutral-700 dark:text-neutral-500 dark:hover:text-neutral-200 transition-colors duration-200"
             >
               {link.label}
             </a>
@@ -35,8 +37,8 @@ export default function Footer() {
 
         {/* Right side */}
         <div className="flex items-center gap-3">
-          <span className="text-[12px] text-neutral-400">Made with</span>
-          <span className="text-[12px] text-neutral-500 font-medium">Next.js &amp; ☕</span>
+          <span className="text-[12px] text-neutral-400 dark:text-neutral-500">Made with</span>
+          <span className="text-[12px] text-neutral-500 dark:text-neutral-400 font-medium">Next.js &amp; ☕</span>
         </div>
       </div>
     </footer>

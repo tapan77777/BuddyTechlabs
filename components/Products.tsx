@@ -6,7 +6,7 @@ const products = [
     description:
       "QR-based digital menu & ordering platform for restaurants. Reduce wait times, eliminate printing costs, and delight guests with a seamless experience.",
     status: "Live" as const,
-    href: "https://menubuddy.example.com",
+    href: "https://menubuddy.co.in",
     accent: "#10b981",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -45,22 +45,22 @@ const products = [
 
 export default function Products() {
   return (
-    <section id="products" className="py-24 px-6 sm:px-8 bg-[#fafafa]">
+    <section id="products" className="py-24 px-6 sm:px-8 bg-[#fafafa] dark:bg-[#0a0a0f]">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="max-w-xl mb-14">
-          <span className="inline-block text-[12px] font-semibold text-primary-600 tracking-widest uppercase mb-4">
+          <span className="inline-block text-[12px] font-semibold text-primary-600 dark:text-primary-400 tracking-widest uppercase mb-4">
             Our Products
           </span>
           <h2
-            className="text-[36px] sm:text-[42px] font-bold text-[#171717] leading-tight tracking-tight mb-4"
+            className="text-[36px] sm:text-[42px] font-bold text-[#171717] dark:text-white leading-tight tracking-tight mb-4"
             style={{ fontFamily: "var(--font-sora)" }}
           >
             Tools built for the
             <br />
             real world.
           </h2>
-          <p className="text-[16px] text-neutral-500 leading-relaxed">
+          <p className="text-[16px] text-neutral-500 dark:text-neutral-400 leading-relaxed">
             Each product is born from a genuine frustration. We build, ship, and
             iterate until it genuinely helps people.
           </p>
@@ -74,9 +74,9 @@ export default function Products() {
         </div>
 
         {/* Bottom hint */}
-        <p className="mt-8 text-center text-[13px] text-neutral-400">
+        <p className="mt-8 text-center text-[13px] text-neutral-400 dark:text-neutral-500">
           More products in the pipeline.{" "}
-          <a href="#about" className="text-neutral-600 hover:text-[#171717] underline underline-offset-2 transition-colors">
+          <a href="#about" className="text-neutral-600 dark:text-neutral-400 hover:text-[#171717] dark:hover:text-white underline underline-offset-2 transition-colors">
             Learn about our process
           </a>
         </p>
